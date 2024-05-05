@@ -1,0 +1,13 @@
+compiler = g++
+cflags = -Wall -g
+
+solutionName = worldclock
+
+worldclock: worldclock.o
+	$(compiler) $(cflags) -o $(solutionName) worldclock.o
+
+worldclock.o: worldclock.cpp travelclock.h clock.h time.h
+	$(compiler) $(cflags) -c worldclock.cpp
+
+clean:
+	rm *.o $(solutionName)
